@@ -18,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/students', [studentController::class, 'index']);
+Route::get('/students', [StudentController::class, 'index']);
+Route::get('/students/create', [StudentController::class, 'create']);
+Route::post('/students/store', [StudentController::class, 'store']);
+Route::get('/students/{id}', [StudentController::class, 'show']);
+Route::get('/students/edit/{id}', [StudentController::class, 'edit']);
+Route::patch('/students/update/{id}', [StudentController::class, 'update']);
+Route::delete('/students/delete/{id}', [StudentController::class, 'destroy']);
